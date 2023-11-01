@@ -2,12 +2,7 @@ import { LightningElement, api,track} from 'lwc';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import assignmentInsert from '@salesforce/apex/AssignmentFormHandler.assignmentInsert';
 import getAssignmentList from '@salesforce/apex/AssignmentFormHandler.getAssignmentList';
-import {refreshApex} from '@salesforce/apex';
-import { updateRecord } from 'lightning/uiRecordApi';
-import Account_Name from '@salesforce/schema/Account.Name';
-import Account_Id from '@salesforce/schema/Account.Id';
-import Account_Industry from '@salesforce/schema/Account.Industry';
-import Account_Description from '@salesforce/schema/Account.Description';
+//import {refreshApex} from '@salesforce/apex';
 export default class AssignmentForm extends LightningElement {
     @api assignmentGroupId;
     
@@ -97,31 +92,4 @@ export default class AssignmentForm extends LightningElement {
         this.dispatchEvent(evt);
 
     }
-    // 
-    // handleSubmit(event){
-    //     event.preventDefault();
-    //     const fields = event.detail.fields;
-    //     console.log('FIELDS83'+fields);
-    //     if((!fields.Name || !fields.Due_Date__c || !fields.Description__c || !fields.Title__c || !fields.Status__c || !fields.Priority__c )){
-    //         this.ShowToastEvent('Error', 'All Fields are required', 'error','error','error','error');
-    //     } else {
-    //         this.submitAssignment(fields);
-    //     }
-    // }
-    // submitAssignment(fields){
-    //     AssignmentInsert({assignmentFields: fields})
-    //         .then(result =>{
-    //             this.ShowToast('Success','Assignment save sucessfullt','Success','Success','Success','Success');
-    //             refreshApex(this.getAssignmentList);
-    //         });
-    // }
-    // ShowToast(title, message, variant)  {
-    //     const event = new ShowToastEvent({
-    //         title: title,
-    //         message: message,
-    //         variant: variant,
-    //     });
-    //     this.dispatchEvent(event);
-    // }
-
 }
