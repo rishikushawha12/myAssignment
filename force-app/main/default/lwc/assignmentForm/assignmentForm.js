@@ -1,13 +1,6 @@
 import { LightningElement, api,track} from 'lwc';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import assignmentInsert from '@salesforce/apex/AssignmentFormHandler.assignmentInsert';
-import getAssignmentList from '@salesforce/apex/AssignmentFormHandler.getAssignmentList';
-import {refreshApex} from '@salesforce/apex';
-import { updateRecord } from 'lightning/uiRecordApi';
-import Account_Name from '@salesforce/schema/Account.Name';
-import Account_Id from '@salesforce/schema/Account.Id';
-import Account_Industry from '@salesforce/schema/Account.Industry';
-import Account_Description from '@salesforce/schema/Account.Description';
 export default class AssignmentForm extends LightningElement {
     @api assignmentGroupId;
     
